@@ -1,0 +1,484 @@
+.super-border {
+  width: 80%;
+  margin-left: 10%;
+  background-color: #F0F7EE;
+  height: 100vw;
+  margin-top: 10vw;
+  margin-bottom: 20px;
+
+  padding-top: 10px;
+}
+
+.superadmin-title {
+  text-align: center;
+  border-bottom: 8px solid greenyellow;
+}
+
+.first {
+  margin-left: 10%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+
+
+.first:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.super-admin-restaurants {
+  margin-top: 20px;
+}
+
+.super-borders {
+  background-color: #D9D9D9;
+  text-align: center;
+  border: 2px solid black;
+}
+
+
+.lists-buttons {
+  font-size: 20px;
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: grey;
+}
+
+.the-restaurants-list {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.check {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 35px;
+  height: 2vw;
+  background-color: aqua;
+}
+
+
+
+.disable-text {
+  margin-top: 35px;
+  margin-left: 10px;
+}
+
+.resto-info-comp {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 20;
+  background-color: #4CAF50;
+
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.left {
+  left: 15px;
+}
+
+.right {
+  right: 15px
+}
+
+#root {
+  background-color: #F0F7EE;
+  text-align: center;
+}
+
+
+
+h1 {
+  font-size: 3rem;
+  margin-top: -1rem;
+  color: #333333;
+  font-family: serif;
+
+}
+
+button {
+
+  background-color: #D5D9D3;
+  font-size: 2rem;
+  height: 4rem;
+  color: #333333;
+  border-radius: 3rem;
+  min-width: 150px;
+  font-family: serif;
+  margin: auto;
+  cursor: pointer;
+
+}
+
+button:hover {
+  border: 1px solid #333333;
+}
+
+button:active {
+  border-color: rgb(7, 7, 7);
+}
+
+nav {
+  background-color: #E4E4E4;
+  height: 5rem;
+  padding-top: 2rem;
+  overflow: scroll;
+
+
+
+}
+
+img {
+
+  width: 100%;
+  height: 13rem;
+}
+
+b {
+
+  padding-left: 79%;
+  color: green;
+  font-family: sans-serif;
+}
+
+h3 {
+  flex-basis: 70%;
+  text-align: left;
+  padding-left: 1rem;
+  color: #4D4D4D;
+  font-family: sans-serif;
+  margin-top: 9px;
+  margin-bottom: 0px;
+}
+
+
+.dish1 {
+  background: #F0F7EE;
+  border: 1px solid #F0F7EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 2rem;
+}
+
+.dish2 {
+  background: #F0F7EE;
+  border: 1px solid #F0F7EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 2rem;
+}
+
+.dish3 {
+  background: #F0F7EE;
+  border: 1px solid #F0F7EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 2rem;
+}
+
+.dish4 {
+  background: #F0F7EE;
+  border: 1px solid #F0F7EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 2rem;
+}
+
+.main {
+  background-color: #E4E4E4;
+}
+
+p {
+  text-align: left;
+  padding-left: 1rem;
+  padding-top: 0rem;
+  color: #4D4D4D;
+  font-family: sans-serif;
+  overflow-wrap: break-word;
+}
+
+
+.item {
+  background-color: #E4E4E4;
+}
+
+
+
+.wrapper {
+  margin: -1rem;
+  padding-right: 17%;
+  left: auto;
+
+}
+
+.container {
+  position: relative;
+
+}
+
+@media screen and (min-width: 100px) {
+  .container2 {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    margin-left: 42%;
+
+  }
+}
+
+.editbtn1 {
+  display: flex;
+  flex-direction: row;
+  width: 7%;
+
+
+}
+
+.editbtn2 {
+  display: flex;
+  flex-direction: row;
+  width: 7%;
+
+
+}
+
+.editbtn3 {
+  display: flex;
+  flex-direction: row;
+  width: 7%;
+
+
+}
+
+.editbtn4 {
+  display: flex;
+  flex-direction: row;
+  width: 7%;
+
+
+}
+
+
+#imgbtn {
+  background-color: #D5D9D3;
+  font-size: 2rem;
+  height: 4rem;
+  color: #333333;
+  border-radius: 3rem;
+  border: 1px black solid;
+  min-width: 0px;
+  font-family: serif;
+  margin: auto;
+  position: absolute;
+  padding-left: 100px;
+  top: 20%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  padding: 0px 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#imgbtn:hover {
+  border: 1px solid #333333;
+}
+
+#imgbtn:active {
+  border-color: rgb(7, 7, 7);
+}
+
+#filePicker {
+  visibility: hidden;
+
+}
+
+#fileimg {
+  height: inherit;
+  width: 60%;
+}
+
+#resname {
+  background-color: #D5D9D3;
+  height: 50px;
+
+  color: #333333;
+  border-radius: 3rem;
+  border: 1px black solid;
+  font-family: serif;
+  cursor: pointer;
+  margin-top: -0.5rem;
+  margin-left: 2px;
+  min-width: 0;
+
+
+}
+
+#editname {
+  height: 100%;
+  width: 60%;
+
+}
+
+#resname:hover {
+  border: 1px solid #333333;
+}
+
+#resname:active {
+  border-color: rgb(7, 7, 7);
+}
+
+#edit1 {
+  background-color: #D5D9D3;
+  height: 40px;
+
+  color: #333333;
+  border-radius: 3rem;
+  border: 1px black solid;
+  font-family: serif;
+  cursor: pointer;
+
+  margin-left: 2px;
+  margin-top: 0px;
+  min-width: 0;
+  margin-bottom: 0px;
+
+}
+
+
+
+
+#edit2 {
+  background-color: #D5D9D3;
+  height: 40px;
+
+  color: #333333;
+  border-radius: 3rem;
+  border: 1px black solid;
+  font-family: serif;
+  cursor: pointer;
+
+  margin-left: 2px;
+  margin-top: 0px;
+  min-width: 0;
+  margin-bottom: 0px;
+
+}
+
+#edit2:hover {
+  border: 1px solid #333333;
+}
+
+#edit2:active {
+  border-color: rgb(7, 7, 7);
+}
+
+
+
+#edit3 {
+  background-color: #D5D9D3;
+  height: 40px;
+
+  color: #333333;
+  border-radius: 3rem;
+  border: 1px black solid;
+  font-family: serif;
+  cursor: pointer;
+
+  margin-left: 2px;
+  margin-top: 0px;
+  min-width: 0;
+  margin-bottom: 0px;
+}
+
+#edit3:hover {
+  border: 1px solid #333333;
+}
+
+#edit3:active {
+  border-color: rgb(7, 7, 7);
+}
+
+
+
+
+#edit4 {
+  background-color: #D5D9D3;
+  height: 40px;
+
+  color: #333333;
+  border-radius: 3rem;
+  border: 1px black solid;
+  font-family: serif;
+  cursor: pointer;
+
+  margin-left: 2px;
+  margin-top: 0px;
+  min-width: 0;
+  margin-bottom: 0px;
+}
+
+#edit4:hover {
+  border: 1px solid #333333;
+}
+
+#edit4:active {
+  border-color: rgb(7, 7, 7);
+}
