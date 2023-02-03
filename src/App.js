@@ -1,9 +1,9 @@
 import "./App.css";
 import React from "react";
-import Superadmin from "./Superadmin";
-import Restoadmin from "./pages/signup/Restoadmin";
+import Superadmin from "./pages/pages/Superadmin";
+import Restoadmin from "./pages/pages/Restoadmin";
 import Restoinfo from "./Restoinfo";
-import Signup from "./pages/signup/Signup";
+
 import Navbar from "./Navbar";
 import { Router, Routes } from "react-router-dom";
 
@@ -18,7 +18,7 @@ function App() {
     
        
     <Route path="/" element={<Superadmin/>}/>
-    <Route path="/signup" element={<Signup/>}/>
+    
     <Route path="/restoadmin" element={<Restoadmin/>}/>
    </Routes>
    </BrowserRouter>

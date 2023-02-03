@@ -1,14 +1,14 @@
-import "./App.css";
+
 import React from "react"
 import axios from 'axios';
 import { useState } from "react";
 import { useEffect } from "react";
-import Restoinfo from "./Restoinfo";
-import Restoadmin from "./pages/signup/Restoadmin";
+import Restoinfo from "../../Restoinfo";
+import Restoadmin from "./Restoadmin";
 
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "../../Navbar";
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHref, Router } from "react-router-dom";
-import Signup from "./pages/signup/Signup";
-import Superadmin from "./Superadmin";
+
+import Superadmin from "./pages/pages/Superadmin";
 import { Route, Routes } from "react-router-dom";
 function Navbar() {
 
@@ -10,7 +10,7 @@ function Navbar() {
         <nav>
             <Link to="/">Superadmin</Link>
             <br />
-            <Link to="/signup">signup</Link>
+
             <br />
 
         </nav>
