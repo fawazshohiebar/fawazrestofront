@@ -9,6 +9,21 @@
   padding-top: 10px;
 }
 
+
+.fileform {
+  display: none;
+  position: fixed;
+  top: 20;
+  background-color: #4CAF50;
+
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+
+
+
 .superadmin-title {
   text-align: center;
   border-bottom: 8px solid greenyellow;
@@ -136,6 +151,7 @@
 
 .left {
   left: 15px;
+  margin-top: -10vw;
 }
 
 .right {

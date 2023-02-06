@@ -23,7 +23,7 @@ function Restoadmin() {
     const [itemdescription, setitemdescription] = useState(null)
     const [itemprice, setitemprice] = useState(0);
     const [itemtags, setitemtags] = useState([])
-
+    const [itemid, setitemid] = useState(null)
 
 
 
@@ -179,6 +179,22 @@ function Restoadmin() {
 
 
 
+    const editTheitem = async () => {
+        const data = { id: itemid, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemtags };
+        await axios.put(`http://localhost:3000/category/item`, data)
+            .then(res => {
+                console.log("Successful update of itemss: ", res.data);
+            })
+            .catch(err => {
+                console.error("Update failed of items : ", err);
+            });
+    }
+
+
+
+
+
+
     const resto_namechanger = (event) => {
         setNresto_name(event.target.value);
         console.log(event.target.value)
@@ -237,7 +253,19 @@ function Restoadmin() {
         document.getElementById("additems").style.display = "none";
     }
 
+    const openedititems = () => {
+        document.getElementById("edititems").style.display = "block";
+    }
+    const closeedititems = () => {
+        document.getElementById("edititems").style.display = "none";
+    }
 
+    const openfileform = () => {
+        document.getElementById("fileedit").style.display = "block";
+    }
+    const closefileform = () => {
+        document.getElementById("fileedit").style.display = "none";
+    }
 
 
 
@@ -262,20 +290,23 @@ function Restoadmin() {
 
             <div className='container'>
                 <img src={`http://localhost:3000/${resto_logo}`} alt='logo for rest'></img>
-                <label id='imgbtn' htmlFor="filePicker" >
+                <button onClick={openfileform}>change the image</button>
 
 
-                    <img id='fileimg' src={edit} alt=''></img>
-                </label>
+
                 <br />
                 <br />
                 <br />
-                <form onSubmit={handleSubmit}>
-                    <input type="file" onChange={handleFileUpload} />
-                    <button type="submit">Submit</button>
 
-                </form>
 
+                <div className="fileform" id="fileedit">
+                    <form onSubmit={handleSubmit}>
+                        <input type="file" onChange={handleFileUpload} />
+                        <button type="submit">Submit</button>
+                        <button onClick={closefileform}> close form</button>
+
+                    </form>
+                </div>
 
             </div>
             <div className='container2'>
@@ -377,8 +408,39 @@ function Restoadmin() {
                     <div className='dish1'>
                         <div className='editbtn1'>
                             <h3>{hourframe.item_name} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   </h3>
-                            <button id='edit1' type='button'><img id='editname' src={edit} alt=''></img></button>
+                            <button id='edit1' type='button' onClick={() => { openedititems(); setitemid(hourframe._id) }}><img id='editname' src={edit} alt=''></img></button>
+
+
+
+                            <div className="form-popup left" id="edititems">
+
+                                <h1>Edit the item item </h1>
+                                <label className="textform" >item_name</label><br />
+                                <input type="text" value={itemname} onChange={handleitemname} />
+                                <br />
+                                <label className="textform" >item_description</label><br />
+                                <input type="text" value={itemdescription} onChange={handleitemdescription} />
+                                <br />
+                                <label className="textform" >item_price</label><br />
+                                <input type="number" value={itemprice} onChange={handleitemprice} />
+                                <br />
+                                <label className="textform" >item_tags</label><br />
+                                <input type="text" value={itemtags} onChange={handleitemtags} />
+                                <br />
+
+
+                                <button className="btn " onClick={editTheitem}>submit</button><br /><br />
+                                <button onClick={closeedititems} className="btn cancel">close me </button>
+
+                            </div>
+
+
+
+
+
+
                         </div>
+
                         <b>{hourframe.item_price}</b>
                         <p>{hourframe.item_description}</p>
                         <p>{hourframe.item_tags}</p>
