@@ -121,7 +121,7 @@ function Superadmin() {
 
     return <div className="App">
         <div className="super-border">
-            <button> </button>
+
 
             < h1 className="superadmin-title" > SuperAdmin page</h1>
             <div className="super-admin-body">

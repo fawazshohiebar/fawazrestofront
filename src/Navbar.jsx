@@ -7,13 +7,7 @@ function Navbar() {
 
     return (
 
-        <nav>
-            <Link to="/">Superadmin</Link>
-            <br />
-
-            <br />
-
-        </nav>
+        <h1></h1>
     );
 }
 

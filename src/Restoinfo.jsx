@@ -41,12 +41,7 @@ function Restoinfo(props) {
 
     <button className="lists-buttons" >
 
-      {/*
-      onClick={hand}
-       <Link to={{
-        pathname: "/restoadmin",
-        state: { userData }
-      }}> */}
+
       <Link to="/restoadmin"
         state={{ resto_id: props.the_id }}
       >
