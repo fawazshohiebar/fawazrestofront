@@ -3,7 +3,7 @@ import React from "react";
 import Superadmin from "./pages/pages/Superadmin";
 import Restoadmin from "./pages/pages/Restoadmin";
 import Restoinfo from "./Restoinfo";
-
+import Inspectors from "./pages/pages/Inspectors";
 import Navbar from "./Navbar";
 import { Router, Routes } from "react-router-dom";
 
@@ -20,6 +20,8 @@ function App() {
     <Route path="/" element={<Superadmin/>}/>
     
     <Route path="/restoadmin" element={<Restoadmin/>}/>
+    <Route path="/Inspectors" element={<Inspectors/>}/>
+  
    </Routes>
    </BrowserRouter>
    

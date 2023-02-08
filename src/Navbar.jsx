@@ -8,10 +8,9 @@ function Navbar() {
     return (
 
         <nav>
-            <Link to="/">Superadmin</Link>
-            <br />
 
-            <br />
+
+
 
         </nav>
     );

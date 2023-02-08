@@ -191,6 +191,15 @@ function Restoadmin() {
     }
 
 
+    const deleteitem = async () => {
+        const data = { _id: itemid }
+        await axios.delete(`http://localhost:3000/categories/items/?_id=${itemid}`)
+            .then(res => {
+                console.log("Successful update of itemss: ");
+            }).catch(err => {
+                console.error("Update failed of items : ", err);
+            })
+    }
 
 
 
@@ -276,7 +285,7 @@ function Restoadmin() {
         getRestoLogo()
         getcategories()
 
-    }, [resto_id, resto_name, category_id, Nresto_name])
+    }, [resto_id, resto_name, category_id, itemid, Nresto_name])
 
 
 
@@ -295,8 +304,8 @@ function Restoadmin() {
 
 
                 <br />
-                
-        
+
+
 
 
                 <div className="fileform" id="fileedit">
@@ -334,26 +343,26 @@ function Restoadmin() {
 
 
             </div>
-             <br />
-             <br />
+            <br />
+            <br />
             <nav className="catN">
                 <div className='wrapper'>
-                    
+
                     {/* <div className='navbtn'></div> */}
                     {
                         categories?.map((hourframe, index) =>
                         (
                             <button className="catB" onClick={() => { setcategory_id(hourframe._id); gofetchitems() }} >{hourframe.category_name}</button>
                         ))
-                        
+
 
                     }
                     <button className="catB" onClick={opencatname}>+</button>
-                    
-                    
 
 
- 
+
+
+
 
 
                     <div className="form-popup left" id="categoryform">
@@ -370,7 +379,7 @@ function Restoadmin() {
 
                 </div>
             </nav>
-           
+
 
 
             <button className="addItem" onClick={openadditems}>additems</button>
@@ -402,63 +411,63 @@ function Restoadmin() {
 
 
 
-<div className="itemBack">
+            <div className="itemBack">
 
-            {itemgetter?.map((hourframe, index) => (
-
-                
-                <div className='item'>
+                {itemgetter?.map((hourframe, index) => (
 
 
+                    <div className='item'>
 
-                    <div className='dish1'>
-                        <div className='editbtn1'>
-                            <div className="itemEd">
-                            <h3 className="itemName">{hourframe.item_name} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   </h3>
-                            <button className="editN" id='edit1' type='button' onClick={() => { openedititems(); setitemid(hourframe._id) }}><img id='editname' src={edit} alt=''></img></button>
-                            <button className="editN">del</button>
+
+
+                        <div className='dish1'>
+                            <div className='editbtn1'>
+                                <div className="itemEd">
+                                    <h3 className="itemName">{hourframe.item_name} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   </h3>
+                                    <button className="editN" id='edit1' type='button' onClick={() => { openedititems(); setitemid(hourframe._id) }}><img id='editname' src={edit} alt=''></img></button>
+                                    <button className="editN" onClick={() => { setitemid(hourframe._id); deleteitem() }}>del</button>
+                                </div>
+
+
+                                <div className="form-popup left" id="edititems">
+
+                                    <h1>Edit the item item </h1>
+                                    <label className="textform" >item_name</label><br />
+                                    <input type="text" value={itemname} onChange={handleitemname} />
+                                    <br />
+                                    <label className="textform" >item_description</label><br />
+                                    <input type="text" value={itemdescription} onChange={handleitemdescription} />
+                                    <br />
+                                    <label className="textform" >item_price</label><br />
+                                    <input type="number" value={itemprice} onChange={handleitemprice} />
+                                    <br />
+                                    <label className="textform" >item_tags</label><br />
+                                    <input type="text" value={itemtags} onChange={handleitemtags} />
+                                    <br />
+
+
+                                    <button className="btn " onClick={editTheitem}>submit</button><br /><br />
+                                    <button onClick={closeedititems} className="btn cancel">close me </button>
+
+                                </div>
+
+
+
+
+
+
                             </div>
 
-
-                            <div className="form-popup left" id="edititems">
-
-                                <h1>Edit the item item </h1>
-                                <label className="textform" >item_name</label><br />
-                                <input type="text" value={itemname} onChange={handleitemname} />
-                                <br />
-                                <label className="textform" >item_description</label><br />
-                                <input type="text" value={itemdescription} onChange={handleitemdescription} />
-                                <br />
-                                <label className="textform" >item_price</label><br />
-                                <input type="number" value={itemprice} onChange={handleitemprice} />
-                                <br />
-                                <label className="textform" >item_tags</label><br />
-                                <input type="text" value={itemtags} onChange={handleitemtags} />
-                                <br />
-
-
-                                <button className="btn " onClick={editTheitem}>submit</button><br /><br />
-                                <button onClick={closeedititems} className="btn cancel">close me </button>
-
-                            </div>
-
-
-
-
-
-
+                            <b className="price">{hourframe.item_price}</b>
+                            <p className="desc">{hourframe.item_description}</p>
+                            <p className="tag">{hourframe.item_tags}</p>
                         </div>
-
-                        <b className="price">{hourframe.item_price}</b>
-                        <p className="desc">{hourframe.item_description}</p>
-                        <p className="tag">{hourframe.item_tags}</p>
                     </div>
-                </div>
 
 
-            ))}
+                ))}
 
-</div>
+            </div>
 
 
 

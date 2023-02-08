@@ -121,7 +121,7 @@ function Superadmin() {
 
     return <div className="App">
         <div className="super-border">
-            <button> </button>
+
 
             < h1 className="superadmin-title" > SuperAdmin page</h1>
             <div className="super-admin-body">
@@ -173,7 +173,10 @@ function Superadmin() {
             <div className="super-admin-restaurants">
                 <div className="super-borders"><h2>Restaurants</h2></div>
                 <div className="the-restaurants-list">
-
+                    <div className="nameofroles">
+                        <h1>adminpages</h1>
+                        <h1>inspectorspage</h1>
+                    </div>
                     {restoinfo?.map((hourframe, index) => (
                         <Restoinfo restoname={restoinfo[index].restaurant_name} the_id={restoinfo[index]._id} is_disabled={restoinfo[index].is_disabled} />
                     ))}

@@ -35,40 +35,60 @@ function Restoinfo(props) {
   };
 
 
-  return <div className="resto-info-comp">
+  return (
+    <div>
 
 
 
-    <button className="lists-buttons" >
+      <div className="resto-info-comp">
 
-      {/*
+
+
+        <button className="lists-buttons" >
+
+          {/*
       onClick={hand}
        <Link to={{
         pathname: "/restoadmin",
         state: { userData }
       }}> */}
-      <Link to="/restoadmin"
-        state={{ resto_id: props.the_id }}
-      >
-        {props.restoname}
-      </Link>
-    </button>
+          <Link to="/restoadmin"
+            state={{ resto_id: props.the_id }}
+          >
+            {props.restoname}
+          </Link>
+        </button>
+        <button className="lists-buttons" >
+
+          {/*
+onClick={hand}
+<Link to={{
+pathname: "/restoadmin",
+state: { userData }
+}}> */}
+          <Link to="/Inspectors"
+            state={{ resto_id: props.the_id, is_disabled: props.is_disabled }}
+          >
+            {props.restoname}
+          </Link>
+        </button>
 
 
 
 
 
 
-    <button
-      className="check"
-      name="halafeek"
-      style={{ backgroundColor: props.is_disabled ? "green" : "red" }}
-      onClick={handleClick}
-    >
+        <button
+          className="check"
+          name="halafeek"
+          style={{ backgroundColor: props.is_disabled ? "green" : "red" }}
+          onClick={handleClick}
+        >
 
-    </button>
-    <h2>{props.is_disabled ? "enabled" : "disabled"}</h2>
+        </button>
+        <h2>{props.is_disabled ? "enabled" : "disabled"}</h2>
 
-  </div >
+      </div >
+    </div>)
 }
 export default Restoinfo;
