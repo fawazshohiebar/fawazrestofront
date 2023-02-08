@@ -24,6 +24,7 @@ function Restoadmin() {
     const [itemprice, setitemprice] = useState(0);
     const [itemtags, setitemtags] = useState([])
     const [itemid, setitemid] = useState(null)
+    const [itemTagsArray, setitemTagsArray] = useState(null)
 
 
 
@@ -180,7 +181,7 @@ function Restoadmin() {
 
 
     const editTheitem = async () => {
-        const data = { id: itemid, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemtags };
+        const data = { id: itemid, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemTagsArray };
         await axios.put(`http://localhost:3000/category/item`, data)
             .then(res => {
                 console.log("Successful update of itemss: ", res.data);
@@ -195,9 +196,9 @@ function Restoadmin() {
         const data = { _id: itemid }
         await axios.delete(`http://localhost:3000/categories/items/?_id=${itemid}`)
             .then(res => {
-                console.log("Successful update of itemss: ");
+                console.log("Successful delete of itemss: ");
             }).catch(err => {
-                console.error("Update failed of items : ", err);
+                console.error("delete failed of items : ", err);
             })
     }
 
@@ -231,7 +232,8 @@ function Restoadmin() {
 
 
     const handleitemtags = (event) => {
-        setitemtags([...itemtags, event.target.value]);
+        setitemtags(event.target.value.split(","));
+        setitemTagsArray([...itemTagsArray, ...itemtags]);
     }
 
 

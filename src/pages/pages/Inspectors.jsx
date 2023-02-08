@@ -222,7 +222,10 @@ function Inspectors() {
 
                         <b>{hourframe.item_price}</b>
                         <p>{hourframe.item_description}</p>
-                        <p>◉{hourframe.item_tags.join(', ')}</p>
+                        <div className="tagsss">
+                            {hourframe.item_tags?.map((hourff, index) => (
+
+                                <p>◉{hourff}</p>))}</div>
                     </div>
                 </div>
 

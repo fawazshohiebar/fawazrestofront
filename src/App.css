@@ -431,3 +431,8 @@ p {
   flex-direction: row;
   justify-content: space-around;
 }
+
+.tagsss {
+  display: flex;
+  flex-direction: row;
+}
