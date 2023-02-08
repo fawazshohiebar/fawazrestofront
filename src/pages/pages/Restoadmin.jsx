@@ -289,14 +289,14 @@ function Restoadmin() {
 
 
             <div className='container'>
-                <img src={`http://localhost:3000/${resto_logo}`} alt='logo for rest'></img>
-                <button onClick={openfileform}>change the image</button>
+                <img src={`http://localhost:3000/${resto_logo}`} alt='logo for rest' className="logo"></img>
+                <button onClick={openfileform} className="change">change the image</button>
 
 
 
                 <br />
-                <br />
-                <br />
+                
+        
 
 
                 <div className="fileform" id="fileedit">
@@ -334,21 +334,26 @@ function Restoadmin() {
 
 
             </div>
-
-            <nav>
+             <br />
+             <br />
+            <nav className="catN">
                 <div className='wrapper'>
-                    <div className='navbtn'></div>
+                    
+                    {/* <div className='navbtn'></div> */}
                     {
                         categories?.map((hourframe, index) =>
                         (
-                            <button onClick={() => { setcategory_id(hourframe._id); gofetchitems() }} >{hourframe.category_name}</button>
+                            <button className="catB" onClick={() => { setcategory_id(hourframe._id); gofetchitems() }} >{hourframe.category_name}</button>
                         ))
+                        
 
                     }
-                    <button onClick={opencatname}>+</button>
+                    <button className="catB" onClick={opencatname}>+</button>
+                    
+                    
 
 
-
+ 
 
 
                     <div className="form-popup left" id="categoryform">
@@ -365,9 +370,10 @@ function Restoadmin() {
 
                 </div>
             </nav>
+           
 
 
-            <button onClick={openadditems}>additems</button>
+            <button className="addItem" onClick={openadditems}>additems</button>
 
 
             <div className="form-popup left" id="additems">
@@ -396,20 +402,22 @@ function Restoadmin() {
 
 
 
-
+<div className="itemBack">
 
             {itemgetter?.map((hourframe, index) => (
 
-
+                
                 <div className='item'>
 
 
 
                     <div className='dish1'>
                         <div className='editbtn1'>
-                            <h3>{hourframe.item_name} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   </h3>
-                            <button id='edit1' type='button' onClick={() => { openedititems(); setitemid(hourframe._id) }}><img id='editname' src={edit} alt=''></img></button>
-
+                            <div className="itemEd">
+                            <h3 className="itemName">{hourframe.item_name} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   </h3>
+                            <button className="editN" id='edit1' type='button' onClick={() => { openedititems(); setitemid(hourframe._id) }}><img id='editname' src={edit} alt=''></img></button>
+                            <button className="editN">del</button>
+                            </div>
 
 
                             <div className="form-popup left" id="edititems">
@@ -441,16 +449,16 @@ function Restoadmin() {
 
                         </div>
 
-                        <b>{hourframe.item_price}</b>
-                        <p>{hourframe.item_description}</p>
-                        <p>{hourframe.item_tags}</p>
+                        <b className="price">{hourframe.item_price}</b>
+                        <p className="desc">{hourframe.item_description}</p>
+                        <p className="tag">{hourframe.item_tags}</p>
                     </div>
                 </div>
 
 
             ))}
 
-
+</div>
 
 
 
