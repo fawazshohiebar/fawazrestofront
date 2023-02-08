@@ -30,7 +30,7 @@ function Restoadmin() {
 
     const changerestoname = async () => {
         const data = { _id: resto_id, restaurant_name: Nresto_name };
-        await axios.put(`http://localhost:3000/restaurant/name`, data)
+        await axios.put(`http://localhost:3000/restaurants/name`, data)
             .then(res => {
                 console.log("Successful update: ", res.data);
             })
@@ -56,7 +56,7 @@ function Restoadmin() {
         formData.append("resto_logo", file);
         formData.append("_id", resto_id);
         axios
-            .put("http://localhost:3000/restaurant/logo", formData)
+            .put("http://localhost:3000/restaurants/logo/put", formData)
             .then((res) => {
                 console.log("everything is done ")
             })
@@ -112,7 +112,7 @@ function Restoadmin() {
 
 
     const getcategories = async () => {
-        await axios.get(`http://localhost:3000/categories/?resto_id=${resto_id}`)
+        await axios.get(`http://localhost:3000/categories/get/?resto_id=${resto_id}`)
 
             .then(res => {
 
@@ -130,7 +130,7 @@ function Restoadmin() {
     const gofetchitems = async () => {
         if (category_id) {
 
-            await axios.get(`http://localhost:3000/categories/items/?cat_id=${category_id}`)
+            await axios.get(`http://localhost:3000/categories/get/items/?cat_id=${category_id}`)
                 .then(res => {
 
                     console.log(res.data)
@@ -166,7 +166,7 @@ function Restoadmin() {
 
     const addnewitem = async () => {
         const data = { cat_id: category_id, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemtags };
-        await axios.post(`http://localhost:3000/item/post`, data)
+        await axios.post(`http://localhost:3000/categories/item/post`, data)
             .then(res => {
                 console.log("Successful update: ", res.data);
             })
@@ -182,7 +182,7 @@ function Restoadmin() {
 
     const editTheitem = async () => {
         const data = { id: itemid, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemTagsArray };
-        await axios.put(`http://localhost:3000/category/item`, data)
+        await axios.put(`http://localhost:3000/categories/item/put`, data)
             .then(res => {
                 console.log("Successful update of itemss: ", res.data);
             })
@@ -194,7 +194,7 @@ function Restoadmin() {
 
     const deleteitem = async () => {
         const data = { _id: itemid }
-        await axios.delete(`http://localhost:3000/categories/items/?_id=${itemid}`)
+        await axios.delete(`http://localhost:3000/categories/items/delete?_id=${itemid}`)
             .then(res => {
                 console.log("Successful delete of itemss: ");
             }).catch(err => {

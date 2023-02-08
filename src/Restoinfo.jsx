@@ -25,7 +25,7 @@ function Restoinfo(props) {
 
   const handleClick = async () => {
     const data = { _id: props.the_id, is_disabled: !props.is_disabled };
-    await axios.put(`http://localhost:3000/restaurant/isdisabled`, data)
+    await axios.put(`http://localhost:3000/restaurants/isdisabled`, data)
       .then(res => {
         console.log("Successful update: ", res.data);
       })

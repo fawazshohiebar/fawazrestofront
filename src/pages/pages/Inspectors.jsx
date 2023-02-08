@@ -72,7 +72,7 @@ function Inspectors() {
 
 
     const getcategories = async () => {
-        await axios.get(`http://localhost:3000/categories/?resto_id=${resto_id}`)
+        await axios.get(`http://localhost:3000/categories/get/?resto_id=${resto_id}`)
 
             .then(res => {
 
@@ -90,7 +90,7 @@ function Inspectors() {
     const gofetchitems = async () => {
         if (category_id) {
 
-            await axios.get(`http://localhost:3000/categories/items/?cat_id=${category_id}`)
+            await axios.get(`http://localhost:3000/categories/get/items/?cat_id=${category_id}`)
                 .then(res => {
 
                     console.log(res.data)

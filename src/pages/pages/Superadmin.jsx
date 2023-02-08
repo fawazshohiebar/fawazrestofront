@@ -28,7 +28,7 @@ function Superadmin() {
 
     };
 
-    const dol = `http://localhost:3000/allrestaurants`
+    const dol = `http://localhost:3000/restaurants/allrestaurants`
     const restaurantgetter = async () => {
         const { data } = await axios.get(dol);
         setrestoinfo(data)
@@ -43,7 +43,7 @@ function Superadmin() {
                 console.log("Successful post: ", res.data);
 
                 const lolo = { user_id: res.data, restaurant_name: "default restaurantname", is_disabled: false }
-                axios.post(`http://localhost:3000/restaurant/post`, lolo)
+                axios.post(`http://localhost:3000/restaurants/post`, lolo)
                     .then(res => {
                         console.log("Successful post for the restaurant : ");
                     }).catch(err => {
