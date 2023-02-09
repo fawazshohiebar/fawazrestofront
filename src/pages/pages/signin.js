@@ -59,8 +59,10 @@ if (response.role==="admin"){
     } else if (response.role === "admin") {
       navigate("/Admin", { replace: true });
     } else {
+
       navigate("/users/login", { replace: true });
     }}
+
   }
   return (
     <>
