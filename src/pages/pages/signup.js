@@ -2,11 +2,23 @@ import React from "react";
 import "./signin.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+
+  
+
+
+
+
+
+
+
+
 
   const role = "admin";
   async function createUser(event) {
@@ -44,7 +56,26 @@ function Signup() {
     if(!created){
       navigate("/users/new", { replace: true });
     }else if (created){
-      navigate("/restaurant", { replace: true });
+
+    
+
+        axios.get(`http://localhost:3000/restaurants/restaurantid?user_id=${response._id}`)
+      
+            .then(res => {
+      
+               console.log(res.data)
+             localStorage.setItem("restoid",res.data._id)
+             navigate("/Admin", { replace: true });
+            })
+            .catch(err => {
+      
+                console.error(err);
+      
+            })
+    
+
+
+    
     }
   }
   return (
