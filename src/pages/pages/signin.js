@@ -29,7 +29,7 @@ function Signin() {
     } else if (response.role === "admin") {
       navigate("/restaurant", { replace: true });
     } else {
-      navigate("/users/login", { replace: true });
+      navigate("/", { replace: true });
     }
   }
   return (
