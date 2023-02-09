@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import Superadmin from "./pages/pages/Superadmin";
 import Restoadmin from "./pages/pages/Restoadmin";
-
+import Admin from "./pages/pages/Admin";
 import Signin from "./pages/pages/signin";
 import Signup from "./pages/pages/signup";
 import Inspectors from "./pages/pages/Inspectors";
@@ -20,7 +20,10 @@ function App() {
    <Route path='/' exact element={<Signin/>} />
     <Route path="/dashboard" element={<Superadmin/>}/>
     <Route path='/users/new' exact element={<Signup/>} />
-    <Route path="/restaurant" element={<Restoadmin/>}/>
+
+    <Route path='/Admin' exact element={<Admin/>} />
+    
+    <Route path="/restoadmin" element={<Restoadmin/>}/>
     <Route path="/Inspectors" element={<Inspectors/>}/>
   
    </Routes>

@@ -7,12 +7,13 @@ import axios from "axios";
 import { useEffect } from "react";
 import base64 from 'base64-js';
 
-function Restoadmin() {
+function Admin() {
+    const userId = window.localStorage.getItem("restoid")
 
-    const { state } = useLocation();
+
     // const data = location.state;
     const [categories, setcategories] = useState(null);
-    const [resto_id, setresto_id] = useState(state.resto_id)
+    const [resto_id, setresto_id] = useState(userId)
     const [resto_name, setresto_name] = useState(null);
     const [resto_logo, setresto_logo] = useState(null)
     const [category_id, setcategory_id] = useState(null)
@@ -279,7 +280,8 @@ function Restoadmin() {
     }
 
 
-
+    // const userId = window.localStorage.getItem("id")
+    // console.log("anaokadlkdjasldj");
 
 
     useEffect(() => {
@@ -482,4 +484,4 @@ function Restoadmin() {
     ;
 }
 
-export default Restoadmin;
+export default Admin;

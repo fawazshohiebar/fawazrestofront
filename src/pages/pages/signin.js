@@ -2,6 +2,7 @@ import React from "react";
 import "./signin.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Signin() {
   const [username, setUsername] = useState("");
@@ -20,17 +21,46 @@ function Signin() {
       }),
     });
 
+
+
+const getresto =async () => {
+
+  await axios.get(`http://localhost:3000/restaurants/restaurantid?user_id=${response._id}`)
+
+      .then(res => {
+
+         console.log(res.data)
+       localStorage.setItem("restoid",res.data._id)
+       navigate("/Admin", { replace: true });
+      })
+      .catch(err => {
+
+          console.error(err);
+
+      })
+};
+
+
     const response = await x.json();
     console.log(response);
     localStorage.setItem("id", response._id);
     localStorage.setItem("role", response.role);
+if (response.role==="admin"){
+  
+  getresto();
+
+}else{
+
+
+
+
     if (response.role === "superadmin") {
       navigate("/dashboard", { replace: true });
     } else if (response.role === "admin") {
-      navigate("/restaurant", { replace: true });
+      navigate("/Admin", { replace: true });
     } else {
       navigate("/users/login", { replace: true });
-    }
+    }}
   }
   return (
     <>
