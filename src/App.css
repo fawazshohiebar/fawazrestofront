@@ -75,6 +75,7 @@ body {
   font-family: serif;
   margin-top: 0rem;
   margin-left: 2rem;
+  position: relative;
 }
 
 .catAdd {
@@ -435,4 +436,17 @@ p {
 .tagsss {
   display: flex;
   flex-direction: row;
+}
+
+.thex-button {
+
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1vw;
+  height: 1vw;
 }

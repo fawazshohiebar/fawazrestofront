@@ -25,6 +25,7 @@ function Restoadmin() {
     const [itemtags, setitemtags] = useState([])
     const [itemid, setitemid] = useState(null)
     const [itemTagsArray, setitemTagsArray] = useState(null)
+    const [catdel, setcatdel] = useState(null)
 
 
 
@@ -192,6 +193,16 @@ function Restoadmin() {
     }
 
 
+    const godeletecat = async () => {
+        const data = { _id: catdel }
+        await axios.delete(`http://localhost:3000/categories/category/delete?_id=${catdel}`)
+            .then(res => {
+                console.log("Successful delete of category: ");
+            }).catch(err => {
+                console.error("delete failed of items : ", err);
+            })
+    }
+
     const deleteitem = async () => {
         const data = { _id: itemid }
         await axios.delete(`http://localhost:3000/categories/items/delete?_id=${itemid}`)
@@ -201,6 +212,7 @@ function Restoadmin() {
                 console.error("delete failed of items : ", err);
             })
     }
+
 
 
 
@@ -289,7 +301,7 @@ function Restoadmin() {
 
 
 
-    }, [resto_id, resto_name, category_id, itemid, Nresto_name])
+    }, [resto_id, catdel, resto_name, category_id, itemid, Nresto_name])
 
 
 
@@ -355,7 +367,15 @@ function Restoadmin() {
                     {
                         categories?.map((hourframe, index) =>
                         (
-                            <button className="catB" onClick={() => { setcategory_id(hourframe._id); gofetchitems() }} >{hourframe.category_name}</button>
+                            <>
+                                <button className="catB" onClick={() => { setcategory_id(hourframe._id); gofetchitems() }} >{hourframe.category_name}
+
+
+
+
+                                </button>
+                                <span class="thex-button" onClick={() => { setcatdel(hourframe._id); godeletecat() }}   >&times;</span>
+                            </>
                         ))
 
 
