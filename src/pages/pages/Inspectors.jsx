@@ -39,7 +39,7 @@ function Inspectors() {
     const getrestoname = () => {
         const data = resto_id;
 
-        axios.get(`http://localhost:3000/restaurants/restaurant_name?_id=${data}`)
+        axios.get(`https://restaurant-6fdf.onrender.com/restaurants/restaurant_name?_id=${data}`)
             .then(res => {
                 console.log("the precss is working")
                 console.log("Successful: ", res.data);
@@ -55,7 +55,7 @@ function Inspectors() {
 
     const getRestoLogo = async () => {
 
-        await axios.get(`http://localhost:3000/restaurants/logos?_id=${resto_id}`)
+        await axios.get(`https://restaurant-6fdf.onrender.com/restaurants/logos?_id=${resto_id}`)
 
             .then(res => {
 
@@ -72,7 +72,7 @@ function Inspectors() {
 
 
     const getcategories = async () => {
-        await axios.get(`http://localhost:3000/categories/get/?resto_id=${resto_id}`)
+        await axios.get(`https://restaurant-6fdf.onrender.com/categories/get/?resto_id=${resto_id}`)
 
             .then(res => {
 
@@ -90,7 +90,7 @@ function Inspectors() {
     const gofetchitems = async () => {
         if (category_id) {
 
-            await axios.get(`http://localhost:3000/categories/get/items/?cat_id=${category_id}`)
+            await axios.get(`https://restaurant-6fdf.onrender.com/categories/get/items/?cat_id=${category_id}`)
                 .then(res => {
 
                     console.log(res.data)
@@ -149,7 +149,7 @@ function Inspectors() {
 
 
             <div className='conn'>
-                <img className="images" src={`http://localhost:3000/${resto_logo}`} alt='logo for rest'></img>
+                <img className="images" src={`https://restaurant-6fdf.onrender.com/${resto_logo}`} alt='logo for rest'></img>
 
             </div>
 

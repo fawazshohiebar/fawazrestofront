@@ -13,7 +13,7 @@ function Signin() {
   }
   async function loginUser(event) {
     event.preventDefault();
-    const x = await fetch("http://localhost:3000/users/login", {
+    const x = await fetch("https://restaurant-6fdf.onrender.com/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ function Signin() {
     const getresto = async () => {
       await axios
         .get(
-          `http://localhost:3000/restaurants/restaurantid?user_id=${response._id}`
+          `https://restaurant-6fdf.onrender.com/restaurants/restaurantid?user_id=${response._id}`
         )
 
         .then((res) => {

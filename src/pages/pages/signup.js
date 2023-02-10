@@ -26,7 +26,7 @@ function Signup() {
   const role = "admin";
   async function createUser(event) {
     event.preventDefault();
-    const x = await fetch("http://localhost:3000/users/new", {
+    const x = await fetch("https://restaurant-6fdf.onrender.com/users/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function Signup() {
 
     const response = await x.json();
     console.log(response)
-    const createResto = await fetch("http://localhost:3000/restaurants/post", {
+    const createResto = await fetch("https://restaurant-6fdf.onrender.com/restaurants/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ function Signup() {
 
     
 
-        axios.get(`http://localhost:3000/restaurants/restaurantid?user_id=${response._id}`)
+        axios.get(`https://restaurant-6fdf.onrender.com/restaurants/restaurantid?user_id=${response._id}`)
       
             .then(res => {
       

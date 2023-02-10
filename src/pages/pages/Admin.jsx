@@ -32,7 +32,7 @@ function Admin() {
 
     const changerestoname = async () => {
         const data = { _id: resto_id, restaurant_name: Nresto_name };
-        await axios.put(`http://localhost:3000/restaurants/name`, data)
+        await axios.put(`https://restaurant-6fdf.onrender.com/restaurants/name`, data)
             .then(res => {
                 console.log("Successful update: ", res.data);
             })
@@ -45,7 +45,7 @@ function Admin() {
 
     const godeletecat = async () => {
         const data = { _id: catdel }
-        await axios.delete(`http://localhost:3000/categories/category/delete?_id=${catdel}`)
+        await axios.delete(`https://restaurant-6fdf.onrender.com/categories/category/delete?_id=${catdel}`)
             .then(res => {
                 console.log("Successful delete of category: ");
             }).catch(err => {
@@ -66,7 +66,7 @@ function Admin() {
         formData.append("resto_logo", file);
         formData.append("_id", resto_id);
         axios
-            .put("http://localhost:3000/restaurants/logo/put", formData)
+            .put("https://restaurant-6fdf.onrender.com/restaurants/logo/put", formData)
             .then((res) => {
                 console.log("everything is done ")
             })
@@ -89,7 +89,7 @@ function Admin() {
 
     const getrestoname = () => {
         const data = resto_id;
-        axios.get(`http://localhost:3000/restaurants/restaurant_name?_id=${data}`)
+        axios.get(`https://restaurant-6fdf.onrender.com/restaurants/restaurant_name?_id=${data}`)
             .then(res => {
                 console.log("the precss is working")
                 console.log("Successful: ", res.data);
@@ -105,7 +105,7 @@ function Admin() {
 
     const getRestoLogo = async () => {
 
-        await axios.get(`http://localhost:3000/restaurants/logos?_id=${resto_id}`)
+        await axios.get(`https://restaurant-6fdf.onrender.com/restaurants/logos?_id=${resto_id}`)
 
             .then(res => {
 
@@ -122,7 +122,7 @@ function Admin() {
 
 
     const getcategories = async () => {
-        await axios.get(`http://localhost:3000/categories/get/?resto_id=${resto_id}`)
+        await axios.get(`https://restaurant-6fdf.onrender.com/categories/get/?resto_id=${resto_id}`)
 
             .then(res => {
 
@@ -140,7 +140,7 @@ function Admin() {
     const gofetchitems = async () => {
         if (category_id) {
 
-            await axios.get(`http://localhost:3000/categories/get/items/?cat_id=${category_id}`)
+            await axios.get(`https://restaurant-6fdf.onrender.com/categories/get/items/?cat_id=${category_id}`)
                 .then(res => {
 
                     console.log(res.data)
@@ -161,7 +161,7 @@ function Admin() {
 
     const addnewcat = async () => {
         const data = { resto_id: resto_id, category_name: catname };
-        await axios.post(`http://localhost:3000/categories/post`, data)
+        await axios.post(`https://restaurant-6fdf.onrender.com/categories/post`, data)
             .then(res => {
                 console.log("Successful update: ", res.data);
             })
@@ -176,7 +176,7 @@ function Admin() {
 
     const addnewitem = async () => {
         const data = { cat_id: category_id, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemtags };
-        await axios.post(`http://localhost:3000/categories/item/post`, data)
+        await axios.post(`https://restaurant-6fdf.onrender.com/categories/item/post`, data)
             .then(res => {
                 console.log("Successful update: ", res.data);
             })
@@ -192,7 +192,7 @@ function Admin() {
 
     const editTheitem = async () => {
         const data = { id: itemid, item_name: itemname, item_description: itemdescription, item_price: itemprice, item_tags: itemTagsArray };
-        await axios.put(`http://localhost:3000/categories/item/put`, data)
+        await axios.put(`https://restaurant-6fdf.onrender.com/categories/item/put`, data)
             .then(res => {
                 console.log("Successful update of itemss: ", res.data);
             })
@@ -204,7 +204,7 @@ function Admin() {
 
     const deleteitem = async () => {
         const data = { _id: itemid }
-        await axios.delete(`http://localhost:3000/categories/items/delete?_id=${itemid}`)
+        await axios.delete(`https://restaurant-6fdf.onrender.com/categories/items/delete?_id=${itemid}`)
             .then(res => {
                 console.log("Successful delete of itemss: ");
             }).catch(err => {
@@ -312,7 +312,7 @@ function Admin() {
 
 
             <div className='container'>
-                <img src={`http://localhost:3000/${resto_logo}`} alt='logo for rest' className="logo"></img>
+                <img src={`https://restaurant-6fdf.onrender.com/${resto_logo}`} alt='logo for rest' className="logo"></img>
                 <button onClick={openfileform} className="change">change the image</button>
 
 

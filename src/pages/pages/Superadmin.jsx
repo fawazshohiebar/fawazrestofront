@@ -28,7 +28,7 @@ function Superadmin() {
 
     };
 
-    const dol = `http://localhost:3000/restaurants/allrestaurants`
+    const dol = `https://restaurant-6fdf.onrender.com/restaurants/allrestaurants`
     const restaurantgetter = async () => {
         const { data } = await axios.get(dol);
         setrestoinfo(data)
@@ -38,12 +38,12 @@ function Superadmin() {
 
     const submituseradmin = async () => {
         const data = { username: Email, password: password, role: adminrole };
-        await axios.post(`http://localhost:3000/users/new`, data)
+        await axios.post(`https://restaurant-6fdf.onrender.com/users/new`, data)
             .then(res => {
                 console.log("Successful post: ", res.data);
 
                 const lolo = { user_id: res.data, restaurant_name: "default name", is_disabled: false }
-                axios.post(`http://localhost:3000/restaurants/post`, lolo)
+                axios.post(`https://restaurant-6fdf.onrender.com/restaurants/post`, lolo)
                     .then(res => {
                         console.log("Successful post for the restaurant : ");
                     }).catch(err => {
@@ -63,7 +63,7 @@ function Superadmin() {
 
     const submitsuperadmin = async () => {
         const data = { username: Email, password: password, role: superadminrole };
-        await axios.post(`http://localhost:3000/users/post`, data)
+        await axios.post(`https://restaurant-6fdf.onrender.com/users/post`, data)
             .then(res => {
                 console.log("Successful post: ", res.data);
             })
