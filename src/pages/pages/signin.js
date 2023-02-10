@@ -8,6 +8,9 @@ function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  function navigateToSingUp (){
+    navigate("/users/new", { replace: true });
+  }
   async function loginUser(event) {
     event.preventDefault();
     const x = await fetch("http://localhost:3000/users/login", {
@@ -21,48 +24,37 @@ function Signin() {
       }),
     });
 
+    const getresto = async () => {
+      await axios
+        .get(
+          `http://localhost:3000/restaurants/restaurantid?user_id=${response._id}`
+        )
 
-
-const getresto =async () => {
-
-  await axios.get(`http://localhost:3000/restaurants/restaurantid?user_id=${response._id}`)
-
-      .then(res => {
-
-         console.log(res.data)
-       localStorage.setItem("restoid",res.data._id)
-       navigate("/Admin", { replace: true });
-      })
-      .catch(err => {
-
+        .then((res) => {
+          console.log(res.data);
+          localStorage.setItem("restoid", res.data._id);
+          navigate("/Admin", { replace: true });
+        })
+        .catch((err) => {
           console.error(err);
-
-      })
-};
-
+        });
+    };
 
     const response = await x.json();
     console.log(response);
     localStorage.setItem("id", response._id);
     localStorage.setItem("role", response.role);
-if (response.role==="admin"){
-  
-  getresto();
-
-}else{
-
-
-
-
-    if (response.role === "superadmin") {
-      navigate("/dashboard", { replace: true });
-    } else if (response.role === "admin") {
-      navigate("/Admin", { replace: true });
+    if (response.role === "admin") {
+      getresto();
     } else {
-
-      navigate("/users/login", { replace: true });
-    }}
-
+      if (response.role === "superadmin") {
+        navigate("/dashboard", { replace: true });
+      } else if (response.role === "admin") {
+        navigate("/Admin", { replace: true });
+      } else {
+        navigate("/users/login", { replace: true });
+      }
+    }
   }
   return (
     <>
@@ -90,6 +82,9 @@ if (response.role==="admin"){
             id="password"
           />
           <input className="submit-btn" type="submit" value="Submit" />
+          <button className="navigateBtn" onClick={navigateToSingUp}>
+            Sign Up
+          </button>
         </form>
       </div>
     </>
