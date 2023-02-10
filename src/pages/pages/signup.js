@@ -8,6 +8,9 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  function navigateToSingIn (){
+    navigate("/", { replace: true });
+  }
 
 
   
@@ -105,6 +108,9 @@ function Signup() {
           />
 
           <input className="submit-btn" type="submit" value="Register" />
+          <button className="navigateBtn" onClick={navigateToSingIn}>
+            Sign In
+          </button>
         </form>
       </div>
     </>

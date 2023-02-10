@@ -88,6 +88,26 @@
         scale: 1.1;
         transition:0.5s ;
     }
+    .navigateBtn{
+        border:none;
+        margin-top: 3%;
+        font-size: 1.2rem;
+        color: darkblue;
+        text-decoration: underline;
+        font-weight: 600;
+        cursor: pointer;
+        background-color: transparent;
+    }
+    .navigateBtn{
+        border:none;
+        margin-top: 3%;
+        font-size: 1.2rem;
+        color: darkblue;
+        text-decoration: underline;
+        font-weight: 600;
+        cursor: pointer;
+        background-color: transparent;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -97,6 +117,16 @@
     align-items: center;
     justify-content: center;
    
+}
+.navigateBtn{
+    border:none;
+    margin-top: 3%;
+    font-size: 1.2rem;
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
 }
 .container-all{
     background-color: #F0EDED;
@@ -227,7 +257,7 @@ body{
     
     .user-input{
         width:75vw;
-        height: 6vh;
+        height: 5vh;
         font-size: 1.5rem;
         border: 2px black solid;
     }
@@ -245,7 +275,7 @@ body{
     }
     .pwd-input{
         width:76vw;
-        height: 6vh;
+        height: 5vh;
         font-size: 1.2rem;
     
         outline: none;
