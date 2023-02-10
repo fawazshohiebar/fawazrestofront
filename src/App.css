@@ -450,3 +450,19 @@ p {
   font-size: 1vw;
   height: 1vw;
 }
+
+@media only screen and (max-width: 600px) {
+  .thex-button {
+    width: 3vw;
+    top: 0;
+    right: 0;
+    padding: 0.5em;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 3vw;
+    height: 3vw;
+  }
+
+}
