@@ -38,11 +38,11 @@ function Superadmin() {
 
     const submituseradmin = async () => {
         const data = { username: Email, password: password, role: adminrole };
-        await axios.post(`http://localhost:3000/users/post`, data)
+        await axios.post(`http://localhost:3000/users/new`, data)
             .then(res => {
                 console.log("Successful post: ", res.data);
 
-                const lolo = { user_id: res.data, restaurant_name: "default restaurantname", is_disabled: false }
+                const lolo = { user_id: res.data, restaurant_name: "default name", is_disabled: false }
                 axios.post(`http://localhost:3000/restaurants/post`, lolo)
                     .then(res => {
                         console.log("Successful post for the restaurant : ");

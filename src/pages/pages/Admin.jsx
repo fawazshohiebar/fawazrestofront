@@ -26,6 +26,7 @@ function Admin() {
     const [itemtags, setitemtags] = useState([])
     const [itemid, setitemid] = useState(null)
     const [itemTagsArray, setitemTagsArray] = useState(null)
+    const [catdel, setcatdel] = useState(null)
 
 
 
@@ -42,7 +43,15 @@ function Admin() {
 
 
 
-
+    const godeletecat = async () => {
+        const data = { _id: catdel }
+        await axios.delete(`http://localhost:3000/categories/category/delete?_id=${catdel}`)
+            .then(res => {
+                console.log("Successful delete of category: ");
+            }).catch(err => {
+                console.error("delete failed of items : ", err);
+            })
+    }
 
 
     // this is for editing the image keepit as it is    
@@ -356,9 +365,14 @@ function Admin() {
                     {/* <div className='navbtn'></div> */}
                     {
                         categories?.map((hourframe, index) =>
-                        (
+                        (<>
                             <button className="catB" onClick={() => { setcategory_id(hourframe._id); gofetchitems() }} >{hourframe.category_name}</button>
-                        ))
+
+
+                            <span class="thex-button" onClick={() => { setcatdel(hourframe._id); godeletecat() }}   >&times;</span>
+
+
+                        </>))
 
 
                     }
