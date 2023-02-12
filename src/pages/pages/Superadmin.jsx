@@ -63,7 +63,7 @@ function Superadmin() {
 
     const submitsuperadmin = async () => {
         const data = { username: Email, password: password, role: superadminrole };
-        await axios.post(`https://restaurant-6fdf.onrender.com/users/post`, data)
+        await axios.post(`https://restaurant-6fdf.onrender.com/users/new`, data)
             .then(res => {
                 console.log("Successful post: ", res.data);
             })
